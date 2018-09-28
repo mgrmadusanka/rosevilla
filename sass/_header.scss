@@ -1,0 +1,183 @@
+/* =============== styles for header section =============== */
+div.headerNavContainer {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 10px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 300ms ease-in-out;
+
+    div.headerSiteBranding {
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button.btnOpenHeaderMobileNav {
+        cursor: pointer;
+        background: none;
+        border: none;
+        outline: none;
+
+        i {
+            font-size: 30px;
+            color: #fff;
+        }
+    }
+
+    nav.headerNav {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        background-color: #1a1a1a;
+        position: absolute;
+        top: 0;
+        left: 100vw;
+
+        button.btnCloseHeaderMobileNav {
+            cursor: pointer;
+            background: none;
+            border: none;
+            outline: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+    
+            i {
+                font-size: 30px;
+                color: #fff;
+            }
+        }
+
+        ul.headerNavLinks {
+            list-style: none;
+            margin-top: 20vh;
+
+            li {
+                padding: 10px 0;
+
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}
+div.headerNavContainer.sticky {
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+}
+
+body:not(.home) {
+    div.headerNavContainer {
+        background-color: rgba(0, 0, 0, 0.8);
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+    }
+}
+
+header.pageHeader {
+    width: 100%;
+    height: 100vh;
+    float: left;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: -moz-linear-gradient(top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 100%);
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 100%);
+        background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', endColorstr='#00000000',GradientType=0 );
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    div.headerNavContainer {
+        padding: 0 50px;
+
+        button.btnOpenHeaderMobileNav {
+            display: none;
+        }
+    
+        nav.headerNav {
+            width: auto;
+            height: auto;
+            background-color: transparent;
+            position: static;
+            top: unset;
+            left: unset;
+    
+            button.btnCloseHeaderMobileNav {
+                display: none;
+            }
+    
+            ul.headerNavLinks {
+                list-style: none;
+                margin: 0;
+    
+                li {
+                    padding: 0 10px;
+                    display: inline;
+                }
+            }
+        }
+    }
+}
+
+header.pageHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1.siteTitle {
+        font-family: 'Merienda', cursive;
+        font-size: 50px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    h2.siteDescription {
+        font-family: 'Merienda', cursive;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    header.pageHeader {
+        h1.siteTitle {
+            font-size: 80px;
+        }
+
+        h2.siteDescription {
+            font-size: 26px;
+        }
+    }
+}

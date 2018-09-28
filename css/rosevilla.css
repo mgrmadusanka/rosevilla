@@ -1,0 +1,665 @@
+/* =============== main stylesheet =============== */
+@import url("https://use.fontawesome.com/releases/v5.3.1/css/all.css");
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,300,400,500");
+@import url("https://fonts.googleapis.com/css?family=Merienda:700");
+/* =============== common styles =============== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+div.mainContainer {
+  width: 100%;
+  float: left;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - 355px);
+}
+
+div.container {
+  width: 90%;
+  max-width: 1500px;
+  padding: 80px 0;
+  margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  div.container {
+    width: 80%;
+  }
+}
+section {
+  outline: none;
+}
+
+.txtCenter {
+  text-align: center;
+}
+
+h1.pageTitle {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  margin: 0;
+  padding: 50px 0 50px 0;
+  color: #4d4d4d;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 768px) {
+  h1.pageTitle {
+    font-size: 58px;
+  }
+}
+h2.sectionTitle {
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  margin: 0;
+  padding: 0 0 50px 0;
+  color: #4d4d4d;
+}
+
+@media only screen and (min-width: 768px) {
+  h2.sectionTitle {
+    font-size: 48px;
+  }
+}
+p {
+  font-size: 18px;
+  font-weight: 300;
+  text-align: justify;
+  letter-spacing: 0.03em;
+  line-height: 1.4em;
+  color: #5d5d5d;
+}
+
+/* =============== styles for header section =============== */
+div.headerNavContainer {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 10px;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 300ms ease-in-out;
+}
+div.headerNavContainer div.headerSiteBranding {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.headerNavContainer button.btnOpenHeaderMobileNav {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+div.headerNavContainer button.btnOpenHeaderMobileNav i {
+  font-size: 30px;
+  color: #fff;
+}
+div.headerNavContainer nav.headerNav {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background-color: #1a1a1a;
+  position: absolute;
+  top: 0;
+  left: 100vw;
+}
+div.headerNavContainer nav.headerNav button.btnCloseHeaderMobileNav {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+div.headerNavContainer nav.headerNav button.btnCloseHeaderMobileNav i {
+  font-size: 30px;
+  color: #fff;
+}
+div.headerNavContainer nav.headerNav ul.headerNavLinks {
+  list-style: none;
+  margin-top: 20vh;
+}
+div.headerNavContainer nav.headerNav ul.headerNavLinks li {
+  padding: 10px 0;
+}
+div.headerNavContainer nav.headerNav ul.headerNavLinks li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 300;
+}
+
+div.headerNavContainer.sticky {
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+}
+
+body:not(.home) div.headerNavContainer {
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+}
+
+header.pageHeader {
+  width: 100%;
+  height: 100vh;
+  float: left;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+}
+header.pageHeader::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#99000000", endColorstr="#00000000",GradientType=0 );
+}
+
+@media only screen and (min-width: 768px) {
+  div.headerNavContainer {
+    padding: 0 50px;
+  }
+  div.headerNavContainer button.btnOpenHeaderMobileNav {
+    display: none;
+  }
+  div.headerNavContainer nav.headerNav {
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    position: static;
+    top: unset;
+    left: unset;
+  }
+  div.headerNavContainer nav.headerNav button.btnCloseHeaderMobileNav {
+    display: none;
+  }
+  div.headerNavContainer nav.headerNav ul.headerNavLinks {
+    list-style: none;
+    margin: 0;
+  }
+  div.headerNavContainer nav.headerNav ul.headerNavLinks li {
+    padding: 0 10px;
+    display: inline;
+  }
+}
+header.pageHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header.pageHeader h1.siteTitle {
+  font-family: "Merienda", cursive;
+  font-size: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+}
+header.pageHeader h2.siteDescription {
+  font-family: "Merienda", cursive;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+  font-size: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  header.pageHeader h1.siteTitle {
+    font-size: 80px;
+  }
+  header.pageHeader h2.siteDescription {
+    font-size: 26px;
+  }
+}
+/* =============== styles for vision, mission and about section =============== */
+div.embedSection section#visionMission {
+  width: 100%;
+  background-color: #292929;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+}
+div.embedSection section#visionMission div.visionMissionContent {
+  width: 80%;
+  max-width: 1200px;
+}
+div.embedSection section#visionMission div.visionMissionContent div h2 {
+  color: #fff;
+  text-align: center;
+  padding: 0;
+}
+div.embedSection section#visionMission div.visionMissionContent div h3 {
+  font-size: 25px;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+  padding: 10px 0 0 0;
+}
+div.embedSection section#visionMission div.visionMissionContent div:first-child {
+  margin-bottom: 80px;
+}
+div.embedSection section#aboutUs {
+  display: flex;
+  justify-content: center;
+}
+div.embedSection section#aboutUs div.container div.aboutImg {
+  width: 100%;
+  text-align: center;
+}
+div.embedSection section#aboutUs div.container div.aboutImg img {
+  max-width: 100%;
+  width: 200px;
+  align-items: center;
+}
+div.embedSection section#aboutUs div.container div.aboutContent {
+  margin-top: 30px;
+}
+div.embedSection section#aboutUs div.container div.aboutContent h2.sectionTitle {
+  text-align: center;
+}
+div.embedSection section#aboutUs div.container div.aboutContent p.aboutPara {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  div.embedSection section#aboutUs div.container {
+    display: flex;
+    justify-content: space-between;
+  }
+  div.embedSection section#aboutUs div.container div.aboutImg {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  div.embedSection section#aboutUs div.container div.aboutContent {
+    margin-top: 0;
+    width: 65%;
+  }
+  div.embedSection section#aboutUs div.container div.aboutContent h2.sectionTitle {
+    text-align: left;
+    padding-bottom: 10px;
+  }
+  div.embedSection section#aboutUs div.container div.aboutContent p.aboutPara {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+  }
+}
+/* =============== styles for services section =============== */
+section#services {
+  width: 100%;
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+}
+section#services div.container h2.sectionTitle {
+  text-align: center;
+}
+section#services div.container div.servicesContainer {
+  width: 100%;
+}
+section#services div.container div.servicesContainer div.service {
+  margin-bottom: 80px;
+}
+section#services div.container div.servicesContainer div.service:last-child {
+  margin-bottom: 0;
+}
+section#services div.container div.servicesContainer div.service div.serviceImage {
+  width: 100%;
+  height: 200px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+section#services div.container div.servicesContainer div.service div.serviceContent {
+  width: 100%;
+}
+section#services div.container div.servicesContainer div.service div.serviceContent h3.serviceTitle {
+  font-size: 24px;
+  font-weight: 400;
+  color: #5d5d5d;
+}
+section#services div.container div.servicesContainer div.service div.serviceContent p.serviceDescription {
+  font-size: 18px;
+  font-weight: 300;
+  text-align: justify;
+  letter-spacing: 0.03em;
+  line-height: 1.4em;
+  color: #5d5d5d;
+}
+
+@media only screen and (min-width: 768px) {
+  section#services div.container div.servicesContainer div.service {
+    display: flex;
+    justify-content: space-between;
+  }
+  section#services div.container div.servicesContainer div.service div.serviceImage {
+    width: 40%;
+    min-height: 300px;
+    height: auto;
+  }
+  section#services div.container div.servicesContainer div.service div.serviceContent {
+    width: 55%;
+  }
+  section#services div.container div.servicesContainer div.service div.serviceContent h3.serviceTitle {
+    margin-top: 0;
+    padding-top: 0;
+    line-height: 1;
+  }
+  section#services div.container div.servicesContainer div.service div.serviceContent p.serviceDescription {
+    margin-bottom: 0;
+  }
+  section#services div.container div.servicesContainer div.service:nth-child(even) div.serviceImage {
+    order: 1;
+  }
+  section#services div.container div.servicesContainer div.service:nth-child(even) div.serviceContent h3.serviceTitle {
+    text-align: right;
+  }
+}
+/* =============== styles for gallery section =============== */
+div.image {
+  width: 300px;
+  height: 200px;
+  display: inline-block;
+}
+
+div.mainContainer section#gallery {
+  display: flex;
+  justify-content: center;
+}
+div.mainContainer section#gallery div.container h2.sectionTitle {
+  text-align: center;
+}
+div.mainContainer section#gallery div.container div.galleryContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+div.mainContainer section#gallery div.container div.galleryContainer div.image {
+  width: 49%;
+  height: 150px;
+  margin-bottom: 2%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (min-width: 768px) {
+  div.mainContainer section#gallery div.container div.galleryContainer div.image {
+    width: 24%;
+    margin-bottom: 1.33%;
+    height: 200px;
+  }
+}
+/* =============== styles for video section =============== */
+div.mainContainer section#video {
+  display: flex;
+  justify-content: center;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+}
+div.mainContainer section#video::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2;
+}
+div.mainContainer section#video div.container div.videoContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+  z-index: 3;
+}
+div.mainContainer section#video div.container div.videoContainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* =============== styles for contacts section =============== */
+section#contacts {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+section#contacts div.container h2.sectionTitle {
+  text-align: center;
+}
+section#contacts div.container div.contactsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+section#contacts div.container div.contactsContainer div.contact {
+  text-align: center;
+  margin-bottom: 50px;
+}
+section#contacts div.container div.contactsContainer div.contact:last-child {
+  margin-bottom: 0;
+}
+section#contacts div.container div.contactsContainer div.contact div.contactImage {
+  width: 80px;
+  height: 80px;
+  padding: 10px;
+  border: 2px solid #333333;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#contacts div.container div.contactsContainer div.contact div.contactImage img {
+  width: 50px;
+  height: 50px;
+}
+section#contacts div.container div.contactsContainer div.contact div.contactContent h3.contactTitle {
+  font-weight: 400;
+  margin-bottom: 0;
+}
+section#contacts div.container div.contactsContainer div.contact div.contactContent p.contactDescription {
+  margin: 10px 0 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  section#contacts div.container div.contactsContainer {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  section#contacts div.container div.contactsContainer div.contact {
+    margin-bottom: 0;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+/* =============== styles for location section =============== */
+div.mainContainer section#location {
+  width: 100%;
+  height: 500px;
+}
+div.mainContainer section#location div#googleMaps {
+  width: 100%;
+  height: 500px;
+}
+
+/* =============== styles for footer section =============== */
+footer.pageFooter {
+  width: 100%;
+  float: left;
+  padding: 80px 0 20px 0;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer.pageFooter div.footerWidgetArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 1500px;
+}
+footer.pageFooter div.footerWidgetArea div.widget {
+  width: 100%;
+  margin-bottom: 30px;
+}
+footer.pageFooter div.footerWidgetArea div.widget:last-child {
+  margin-bottom: 0;
+}
+footer.pageFooter div.footerWidgetArea div.widget h3.widget_title {
+  color: #fff;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+}
+footer.pageFooter div.footerWidgetArea div.widget_media_image {
+  text-align: center;
+}
+footer.pageFooter div.footerWidgetArea div.widget_media_image img {
+  width: 200px;
+  height: 200px;
+}
+footer.pageFooter div.footerWidgetArea div.widget_custom_html div.custom-html-widget {
+  display: flex;
+  justify-content: space-between;
+}
+footer.pageFooter div.footerWidgetArea div.widget_custom_html div.custom-html-widget a {
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 10px;
+}
+footer.pageFooter div.footerWidgetArea div.widget_nav_menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+footer.pageFooter div.footerWidgetArea div.widget_nav_menu ul li {
+  margin-bottom: 10px;
+}
+footer.pageFooter div.footerWidgetArea div.widget_nav_menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 300;
+}
+footer.pageFooter div.footerCredit {
+  margin-top: 50px;
+}
+footer.pageFooter div.footerCredit p {
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+@media only screen and (min-width: 768px) {
+  footer.pageFooter div.footerWidgetArea {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+  }
+  footer.pageFooter div.footerWidgetArea div.widget {
+    width: auto;
+    margin-bottom: 0;
+  }
+  footer.pageFooter div.footerWidgetArea div.widget_media_image img {
+    width: 150px;
+    height: 150px;
+  }
+  footer.pageFooter div.footerWidgetArea div.widget_custom_html {
+    min-width: 250px;
+  }
+  footer.pageFooter div.footerWidgetArea div.widget_custom_html div.custom-html-widget a {
+    transition: transform 300ms ease-in-out;
+  }
+  footer.pageFooter div.footerWidgetArea div.widget_custom_html div.custom-html-widget a:hover {
+    transform: scale(1.1);
+  }
+  footer.pageFooter div.footerWidgetArea div.widget_nav_menu ul li a:hover {
+    text-decoration: underline;
+  }
+}
+a#scrollTopBtn {
+  position: fixed;
+  text-decoration: none;
+  bottom: 20px;
+  right: 20px;
+  z-index: 110;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 30px;
+  border-radius: 50%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+a#scrollTopBtn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/*# sourceMappingURL=rosevilla.css.map */

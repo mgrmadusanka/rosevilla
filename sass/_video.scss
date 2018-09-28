@@ -1,0 +1,44 @@
+/* =============== styles for video section =============== */
+div.mainContainer {
+    section#video {
+        display: flex;
+        justify-content: center;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2;
+        }
+
+        div.container {
+            div.videoContainer {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                position: relative;
+                padding-bottom: 56.25%; /* 16:9 */
+                height: 0;
+                z-index: 3;
+
+                iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

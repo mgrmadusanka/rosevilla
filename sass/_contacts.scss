@@ -1,0 +1,76 @@
+/* =============== styles for contacts section =============== */
+section#contacts {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    div.container {
+        h2.sectionTitle {
+            text-align: center;
+        }
+
+        div.contactsContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            div.contact {
+                text-align: center;
+                margin-bottom: 50px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                
+                div.contactImage {
+                    width: 80px;
+                    height: 80px;
+                    padding: 10px;
+                    border: 2px solid #333333;
+                    border-radius: 50%;
+                    margin: 0 auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+
+                div.contactContent {
+                    h3.contactTitle {
+                        font-weight: 400;
+                        margin-bottom: 0;
+                    }
+
+                    p.contactDescription {
+                        margin: 10px 0 0 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    section#contacts {
+        div.container {
+            div.contactsContainer {
+                flex-direction: row;
+                align-items: flex-start;
+                
+                div.contact {
+                    margin-bottom: 0;
+                    width: 30%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}

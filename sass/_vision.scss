@@ -1,0 +1,102 @@
+/* =============== styles for vision, mission and about section =============== */
+div.embedSection {
+    section#visionMission {
+        width: 100%;
+        background-color: #292929;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 0;
+       
+        div.visionMissionContent {
+            width: 80%;
+            max-width: 1200px;
+
+            div {
+                h2 {
+                    color: #fff;
+                    text-align: center;
+                    padding: 0;
+                }
+
+                h3 {
+                    font-size: 25px;
+                    font-weight: 300;
+                    text-align: center;
+                    color: #fff;
+                    margin: 0;
+                    padding: 10px 0 0 0;
+                }
+
+                &:first-child{
+                    margin-bottom: 80px;
+                }
+            }
+        }
+    }
+
+    section#aboutUs {
+        display: flex;
+        justify-content: center;
+
+        div.container {
+            div.aboutImg {
+                width: 100%;
+                text-align: center;
+
+                img {
+                    max-width: 100%;
+                    width: 200px;
+                    align-items: center;
+                }
+            }
+
+            div.aboutContent {
+                margin-top: 30px;
+
+                h2.sectionTitle {
+                    text-align: center;
+                }
+
+                p.aboutPara {
+                    text-align: center;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    div.embedSection {
+        section#aboutUs {
+            div.container {
+                display: flex;
+                justify-content: space-between;
+
+                div.aboutImg {
+                    width: 30%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                div.aboutContent {
+                    margin-top: 0;
+                    width: 65%;
+
+                    h2.sectionTitle {
+                        text-align: left;
+                        padding-bottom: 10px;
+                    }
+
+                    p.aboutPara {
+                        text-align: left;
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}
